@@ -1,0 +1,1246 @@
+<html lang="zh-CN"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>问道阳明，竹海修心</title>
+  <!-- Tailwind CSS v3 -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Font Awesome -->
+  <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <!-- 统一的 Tailwind 配置 -->
+  <script>
+    // 滚动到指定区域
+    function scrollToSection(sectionId) {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({
+          behavior: 'smooth'
+        });
+      }
+    }
+
+    // 语音解说功能
+    document.addEventListener('DOMContentLoaded', function() {
+      const audioGuideBtn = document.getElementById('audio-guide-btn');
+      let isPlaying = false;
+
+      audioGuideBtn.addEventListener('click', function() {
+        if (!isPlaying) {
+          // 模拟语音解说开始
+          audioGuideBtn.innerHTML = '<i class="fa fa-pause mr-2"></i>暂停解说';
+          audioGuideBtn.classList.add('bg-red-600');
+          audioGuideBtn.classList.remove('bg-primary');
+          isPlaying = true;
+          alert('语音解说已开始');
+        } else {
+          // 模拟语音解说暂停
+          audioGuideBtn.innerHTML = '<i class="fa fa-volume-up mr-2"></i>语音解说';
+          audioGuideBtn.classList.add('bg-primary');
+          audioGuideBtn.classList.remove('bg-red-600');
+          isPlaying = false;
+          alert('语音解说已暂停');
+        }
+      });
+    });
+
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#2D5016', // 深绿色
+            secondary: '#8FBC8F', // 浅绿色
+            accent: '#D2B48C', // 棕褐色
+            light: '#F5F5DC', // 米黄色
+            dark: '#3E2723', // 深棕色
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            serif: ['"Noto Serif SC"', 'serif'],
+          },
+          backgroundImage: {
+            'bamboo-pattern': "url('https://p3-flow-imagex-sign.byteimg.com/tos-cn-i-a9rns2rl98/rc/pc/super_tool/10819088bb914f4ca57d40dab7cfa4ca~tplv-a9rns2rl98-image.image?lk3s=8e244e95&rcl=20260320151408C01D73EF0C83A73C73B6&rrcfp=f06b921b&x-expires=1776582888&x-signature=eDCcAYQFnL1pCDrY1w0e9a4VDao%3D')",
+          }
+        }
+      }
+    }
+  }
+</script>
+  <style type="text/tailwindcss">
+    @layer utilities {
+      .text-shadow {
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+      }
+      .text-shadow-lg {
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      }
+      .glass-effect {
+        background: rgba(255, 255, 255, 0.7);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+      }
+      .bamboo-border {
+        border-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="none" stroke="%232D5016" stroke-width="2" rx="5"/></svg>') 20;
+      }
+    }
+  </style>
+</head>
+<body class="bg-light font-serif text-dark min-h-screen pb-20">
+  <!-- 凤凰装饰元素 - 页面右上角 -->
+  <div class="fixed top-20 right-4 w-24 h-24 opacity-10 z-0 pointer-events-none">
+    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+      <path d="M50,10 C60,20 70,15 80,30 C90,45 85,60 70,70 C55,80 40,75 30,60 C15,45 20,30 30,20 C40,10 45,5 50,10 Z" fill="#047857"></path>
+      <path d="M60,30 C65,35 70,30 75,40 C80,50 75,60 65,65 C55,70 45,65 40,55 C35,45 40,35 50,30 C55,25 55,25 60,30 Z" fill="#10B981"></path>
+      <path d="M50,40 C55,42 58,40 60,45 C62,50 60,55 55,58 C50,60 45,58 42,52 C40,47 42,43 45,40 C47,38 48,39 50,40 Z" fill="#D1FAE5"></path>
+    </svg>
+  </div>
+  <!-- 顶部导航栏 -->
+  <header class="bg-primary text-white shadow-md sticky top-0 z-50">
+    <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+      <div class="flex items-center space-x-2">
+        <i class="fa fa-leaf text-2xl"></i>
+        <h1 class="text-xl font-bold" style="color: rgb(10, 10, 10);">问道阳明，竹海修心</h1>
+      </div>
+      <div class="flex items-center space-x-4">
+        <button class="text-white hover:text-secondary transition-colors">
+          <i class="fa fa-search text-lg"></i>
+        </button>
+        <button class="text-white hover:text-secondary transition-colors">
+          <i class="fa fa-user-circle text-lg"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- 主内容区域 -->
+  <main class="container mx-auto px-4 py-6">
+    <!-- 首页轮播图 -->
+    <section class="mb-8 relative">
+      <div class="rounded-xl overflow-hidden shadow-lg h-64 md:h-80 relative">
+        <img src="https://p3-flow-imagex-sign.byteimg.com/tos-cn-i-a9rns2rl98/rc/pc/super_tool/2824e4acefe440ce9ab52084c3fd7012~tplv-a9rns2rl98-image.image?lk3s=8e244e95&amp;rcl=20260320151408C01D73EF0C83A73C73B6&amp;rrcfp=f06b921b&amp;x-expires=1776582878&amp;x-signature=tIVhmT5VO4R0HNkhdGRAGrMUKGg%3D" alt="王阳明博物馆" class="w-full h-full object-cover">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end">
+          <div class="p-6 text-white">
+            <h2 class="text-2xl md:text-3xl font-bold text-shadow-lg mb-2">河源市和平县阳明博物馆</h2>
+            <p class="text-sm md:text-base text-shadow">探索阳明心学，感受传统文化魅力</p>
+          </div>
+        </div>
+        <!-- 轮播指示器 -->
+        <div class="absolute bottom-4 right-4 flex space-x-2">
+          <span class="w-3 h-3 rounded-full bg-white"></span>
+          <span class="w-3 h-3 rounded-full bg-white/50"></span>
+          <span class="w-3 h-3 rounded-full bg-white/50"></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 快捷链接按钮 -->
+    <section class="mb-8">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <!-- 博物馆导览卡片 -->
+        <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow cursor-pointer border border-primary/30" onclick="scrollToSection('museum-guide')">
+          <div class="h-24 bg-primary/10 flex items-center justify-center">
+            <i class="fa fa-info-circle text-4xl text-primary"></i>
+          </div>
+          <div class="p-4 text-center">
+            <h3 class="font-bold">问道阳明</h3>
+          </div>
+        </div>
+        
+        <!-- 参观路线推荐卡片 -->
+        <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow cursor-pointer border border-primary/30" onclick="scrollToSection('visit-route')">
+          <div class="h-24 bg-secondary/20 flex items-center justify-center">
+            <i class="fa fa-map-signs text-4xl text-primary"></i>
+          </div>
+          <div class="p-4 text-center">
+            <h3 class="font-bold">阳明有礼</h3>
+          </div>
+        </div>
+        
+        <!-- 文化脉络解读卡片 -->
+        <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow cursor-pointer border border-primary/30" onclick="scrollToSection('cultural-context')">
+          <div class="h-24 bg-accent/20 flex items-center justify-center">
+            <i class="fa fa-book text-4xl text-primary"></i>
+          </div>
+          <div class="p-4 text-center">
+            <h3 class="font-bold">体验预约</h3>
+          </div>
+        </div>
+        
+        <!-- 场馆导航卡片 -->
+        <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow cursor-pointer border border-primary/30" onclick="scrollToSection('venue-navigation')">
+          <div class="h-24 bg-dark/10 flex items-center justify-center">
+            <i class="fa fa-map-marker text-4xl text-primary"></i>
+          </div>
+          <div class="p-4 text-center">
+            <h3 class="font-bold">场馆导航</h3>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 内容区域 -->
+    <section>
+      <!-- 问道阳明页面 -->
+      <div id="wenda" class="tab-content">
+        <div class="bg-white rounded-xl shadow-md p-6 mb-6" id="venue-navigation">
+          <div class="flex justify-between items-center mb-4 border-b pb-2">
+            <h2 class="text-2xl font-bold text-primary">博物馆导览</h2>
+            <button id="audio-guide-btn" class="bg-primary text-white px-4 py-2 rounded-lg flex items-center hover:bg-primary/90 transition-colors border border-primary/30">
+              <i class="fa fa-volume-up mr-2"></i>
+              语音解说
+            </button>
+          </div>
+          
+          <!-- 博物馆简介 -->
+          <div class="mb-6">
+            <h3 class="text-xl font-semibold mb-3 flex items-center">
+              <i class="fa fa-info-circle text-primary mr-2"></i>
+              博物馆简介
+            </h3>
+            <p class="text-gray-700 leading-relaxed">
+              河源市和平县阳明博物馆是为纪念明代著名哲学家、军事家王阳明而建，展示了王阳明的生平事迹、思想成就以及在和平县的历史足迹。博物馆建筑融合了传统客家风格与现代设计元素，环境优美，文化氛围浓厚。
+            </p>
+          </div>
+          
+          <!-- 开放时间 -->
+          <div class="mb-6">
+            <h3 class="text-xl font-semibold mb-3 flex items-center">
+              <i class="fa fa-clock-o text-primary mr-2"></i>
+              开放时间
+            </h3>
+            <div class="bg-light/50 p-4 rounded-lg">
+              <p class="mb-2"><span class="font-medium">周二至周日：</span> 9:00 - 17:00（16:30停止入场）</p>
+              <p><span class="font-medium">周一：</span> 闭馆（法定节假日除外）</p>
+            </div>
+            
+
+          </div>
+          
+          <!-- 参观路线推荐 -->
+          <div class="mb-6" id="visit-route">
+            <h3 class="text-xl font-semibold mb-3 flex items-center">
+              <i class="fa fa-map-signs text-primary mr-2"></i>
+              参观路线推荐
+            </h3>
+            <div class="relative">
+              <div class="absolute left-4 top-0 bottom-0 w-0.5 bg-primary/30"></div>
+              
+              <div class="relative pl-12 pb-6">
+                <div class="absolute left-2 top-1 w-6 h-6 rounded-full bg-primary text-white flex items-center justify-center">1</div>
+                <h4 class="font-medium text-lg">入口大厅</h4>
+                <p class="text-gray-600 mt-1">了解博物馆概况，欣赏王阳明生平大型壁画</p>
+              </div>
+              
+              <div class="relative pl-12 pb-6">
+                <div class="absolute left-2 top-1 w-6 h-6 rounded-full bg-primary text-white flex items-center justify-center">2</div>
+                <h4 class="font-medium text-lg">生平事迹厅</h4>
+                <p class="text-gray-600 mt-1">通过文物、图片和多媒体展示王阳明生平重要事件</p>
+              </div>
+              
+              <div class="relative pl-12 pb-6">
+                <div class="absolute left-2 top-1 w-6 h-6 rounded-full bg-primary text-white flex items-center justify-center">3</div>
+                <h4 class="font-medium text-lg">心学思想厅</h4>
+                <p class="text-gray-600 mt-1">深入了解"致良知"、"知行合一"等核心思想</p>
+              </div>
+              
+              <div class="relative pl-12">
+                <div class="absolute left-2 top-1 w-6 h-6 rounded-full bg-primary text-white flex items-center justify-center">4</div>
+                <h4 class="font-medium text-lg">互动体验区</h4>
+                <p class="text-gray-600 mt-1">通过现代科技手段体验阳明心学的智慧</p>
+              </div>
+            </div>
+            
+
+          </div>
+          
+          <!-- 阳明文化核心脉络解读 -->
+          <div class="mb-6" id="cultural-context">
+            <h3 class="text-xl font-semibold mb-3 flex items-center">
+              <i class="fa fa-book text-primary mr-2"></i>
+              阳明文化核心脉络解读
+            </h3>
+            <div class="bg-primary/5 p-4 rounded-lg border-l-4 border-primary">
+              <h4 class="font-medium mb-2">心即理</h4>
+              <p class="text-gray-700 mb-3">王阳明认为"心外无物，心外无理"，人的本心即是天理，是道德的根源。</p>
+              
+              <h4 class="font-medium mb-2">致良知</h4>
+              <p class="text-gray-700 mb-3">通过自我反省，发现并发挥内心的良知，是王阳明心学的核心方法论。</p>
+              
+              <h4 class="font-medium mb-2">知行合一</h4>
+              <p class="text-gray-700">认识事物的道理与实行其事，是密不可分的一回事，知是行的主意，行是知的工夫。</p>
+            </div>
+            
+
+          </div>
+        </div>
+        
+        <!-- 场馆导航 -->
+        <div class="bg-white rounded-xl shadow-md p-6 mb-6" id="venue-navigation">
+          <h2 class="text-2xl font-bold mb-4 text-primary border-b pb-2">场馆导航</h2>
+          
+          <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+            <!-- 停车场 -->
+            <div class="bg-light/50 p-4 rounded-lg flex flex-col items-center text-center">
+              <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-3">
+                <i class="fa fa-car text-xl text-primary"></i>
+              </div>
+              <h3 class="font-medium mb-1">停车场</h3>
+              <p class="text-sm text-gray-600">博物馆东侧，免费停车</p>
+            </div>
+            
+            <!-- 卫生间 -->
+            <div class="bg-light/50 p-4 rounded-lg flex flex-col items-center text-center">
+              <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-3">
+                <i class="fa fa-bath text-xl text-primary"></i>
+              </div>
+              <h3 class="font-medium mb-1">卫生间</h3>
+              <p class="text-sm text-gray-600">每层展厅均有设置</p>
+            </div>
+            
+            <!-- 休息区 -->
+            <div class="bg-light/50 p-4 rounded-lg flex flex-col items-center text-center">
+              <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-3">
+                <i class="fa fa-coffee text-xl text-primary"></i>
+              </div>
+              <h3 class="font-medium mb-1">休息区</h3>
+              <p class="text-sm text-gray-600">二楼西侧，提供茶水</p>
+            </div>
+            
+            <!-- 咨询台 -->
+            <div class="bg-light/50 p-4 rounded-lg flex flex-col items-center text-center">
+              <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-3">
+                <i class="fa fa-question-circle text-xl text-primary"></i>
+              </div>
+              <h3 class="font-medium mb-1">咨询台</h3>
+              <p class="text-sm text-gray-600">入口大厅左侧</p>
+            </div>
+            
+            <!-- 充电桩 -->
+            <div class="bg-light/50 p-4 rounded-lg flex flex-col items-center text-center">
+              <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-3">
+                <i class="fa fa-bolt text-xl text-primary"></i>
+              </div>
+              <h3 class="font-medium mb-1">充电桩</h3>
+              <p class="text-sm text-gray-600">停车场B区，支持快充</p>
+            </div>
+            
+            <!-- 急救点 -->
+            <div class="bg-light/50 p-4 rounded-lg flex flex-col items-center text-center">
+              <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-3">
+                <i class="fa fa-medkit text-xl text-primary"></i>
+              </div>
+              <h3 class="font-medium mb-1">急救点</h3>
+              <p class="text-sm text-gray-600">一楼东侧，配备医护人员</p>
+            </div>
+            
+
+          </div>
+        </div>
+        
+        <!-- 语音讲解 -->
+        <div class="bg-white rounded-xl shadow-md p-6">
+          <h2 class="text-2xl font-bold mb-4 text-primary border-b pb-2">语音讲解</h2>
+          
+          <div class="mb-6">
+            <div class="flex items-center justify-between mb-4">
+              <h3 class="text-xl font-semibold">全展厅讲解</h3>
+              <button id="all-audio-toggle" class="bg-primary text-white px-4 py-2 rounded-lg flex items-center border border-primary/30">
+                <i class="fa fa-play mr-2"></i>
+                <span>开启讲解</span>
+              </button>
+            </div>
+            <p class="text-gray-600 mb-4">由专业讲解员带领您全面了解博物馆的每个展厅和重要文物</p>
+            
+            <div class="bg-light/50 p-4 rounded-lg">
+              <div class="flex items-center mb-2">
+                <div class="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center mr-3">
+                  <i class="fa fa-volume-up text-primary"></i>
+                </div>
+                <div>
+                  <h4 class="font-medium">当前讲解：入口大厅</h4>
+                  <p class="text-sm text-gray-500">剩余时间：10:30</p>
+                </div>
+              </div>
+              <div class="w-full bg-gray-200 rounded-full h-2.5">
+                <div class="bg-primary h-2.5 rounded-full" style="width: 25%"></div>
+              </div>
+            </div>
+            
+
+          </div>
+          
+          <div>
+            <h3 class="text-xl font-semibold mb-4">重点文物讲解</h3>
+            
+            <div class="space-y-4">
+              <!-- 文物1 -->
+              <div class="bg-light/50 p-4 rounded-lg flex items-center hover:shadow-md transition-shadow">
+                <div class="w-20 h-20 bg-gray-200 rounded-lg overflow-hidden mr-4 flex-shrink-0">
+                  <img src="https://p11-flow-imagex-download-sign.byteimg.com/tos-cn-i-a9rns2rl98/b9da5dbe4678482aa53a099724b596f2.png~tplv-a9rns2rl98-24:720:720.png?lk3s=8e244e95&amp;rcl=20260320161114FF036F98E8F87808E2AD&amp;rrcfp=8a172a1a&amp;x-expires=1774599075&amp;x-signature=fGB5TiaJpSVm0rvZN2vCHpaAbGE%3D" alt="王阳明手书" class="w-full h-full object-cover">
+                </div>
+                <div class="flex-grow">
+                  <h4 class="font-medium">王阳明手书</h4>
+                  <p class="text-sm text-gray-600 mb-2">明代王阳明亲笔手书，笔法苍劲有力，内容蕴含心学智慧</p>
+                  <button class="bg-secondary/80 text-primary px-3 py-1 rounded-lg text-sm flex items-center border border-primary/30 hover:bg-secondary transition-colors">
+                    <i class="fa fa-headphones mr-1"></i>
+                    收听讲解
+                  </button>
+                </div>
+              </div>
+              
+              <!-- 文物2 -->
+              <div class="bg-light/50 p-4 rounded-lg flex items-center hover:shadow-md transition-shadow">
+                <div class="w-20 h-20 bg-gray-200 rounded-lg overflow-hidden mr-4 flex-shrink-0">
+                  <img src="https://p26-flow-imagex-download-sign.byteimg.com/tos-cn-i-a9rns2rl98/894517d4ac98400596a5520cb3e91ca2.png~tplv-a9rns2rl98-24:720:720.png?lk3s=8e244e95&amp;rcl=20260320161114FF036F98E8F87808E2AD&amp;rrcfp=8a172a1a&amp;x-expires=1774599075&amp;x-signature=CMBSExMhxRZTa3oDUHCFthBfNF0%3D" alt="河源市和平县凤凰图" class="w-full h-full object-cover">
+                </div>
+                <div class="flex-grow">
+                  <h4 class="font-medium">河源市和平县凤凰图</h4>
+                  <p class="text-sm text-gray-600 mb-2">象征和平县"深山出金凤凰"的美好寓意，展现地方文化特色</p>
+                  <button class="bg-secondary/80 text-primary px-3 py-1 rounded-lg text-sm flex items-center border border-primary/30 hover:bg-secondary transition-colors">
+                    <i class="fa fa-headphones mr-1"></i>
+                    收听讲解
+                  </button>
+                </div>
+              </div>
+              
+              <!-- 文物3 -->
+              <div class="bg-light/50 p-4 rounded-lg flex items-center hover:shadow-md transition-shadow">
+                <div class="w-20 h-20 bg-gray-200 rounded-lg overflow-hidden mr-4 flex-shrink-0">
+                  <img src="https://p26-flow-imagex-download-sign.byteimg.com/tos-cn-i-a9rns2rl98/c77e8a956f3946cf91715ffb4fb74f73.png~tplv-a9rns2rl98-24:720:720.png?lk3s=8e244e95&amp;rcl=20260320161114FF036F98E8F87808E2AD&amp;rrcfp=8a172a1a&amp;x-expires=1774599075&amp;x-signature=93ChpaS6nAdvUgqz69IIXAKSIPs%3D" alt="和平县猫头狮" class="w-full h-full object-cover">
+                </div>
+                <div class="flex-grow">
+                  <h4 class="font-medium">和平县猫头狮</h4>
+                  <p class="text-sm text-gray-600 mb-2">传统民俗文化代表，展现和平县独特的民间艺术风格</p>
+                  <button class="bg-secondary/80 text-primary px-3 py-1 rounded-lg text-sm flex items-center border border-primary/30 hover:bg-secondary transition-colors">
+                    <i class="fa fa-headphones mr-1"></i>
+                    收听讲解
+                  </button>
+                </div>
+              </div>
+              
+              <!-- 文物4 -->
+              <div class="bg-light/50 p-4 rounded-lg flex items-center hover:shadow-md transition-shadow">
+                <div class="w-20 h-20 bg-gray-200 rounded-lg overflow-hidden mr-4 flex-shrink-0">
+                  <img src="https://p26-flow-imagex-download-sign.byteimg.com/tos-cn-i-a9rns2rl98/74bbf2aebd034208a4b1f54adcb1ba34.png~tplv-a9rns2rl98-24:720:720.png?lk3s=8e244e95&amp;rcl=20260320161114FF036F98E8F87808E2AD&amp;rrcfp=8a172a1a&amp;x-expires=1774599075&amp;x-signature=oNJ1NUAdYe43%2BO42w5JiHgzpFu0%3D" alt="河源市和平镇红色记忆" class="w-full h-full object-cover">
+                </div>
+                <div class="flex-grow">
+                  <h4 class="font-medium">河源市和平镇红色记忆</h4>
+                  <p class="text-sm text-gray-600 mb-2">记录革命历史，传承红色文化，展现和平镇的红色基因</p>
+                  <button class="bg-secondary/80 text-primary px-3 py-1 rounded-lg text-sm flex items-center border border-primary/30 hover:bg-secondary transition-colors">
+                    <i class="fa fa-headphones mr-1"></i>
+                    收听讲解
+                  </button>
+                </div>
+              </div>
+            </div>
+            
+
+          </div>
+        </div>
+      </div>
+      
+      <!-- 阳明有礼页面 -->
+      <div id="youli" class="tab-content hidden">
+        <div class="bg-white rounded-xl shadow-md p-6 mb-6">
+          <h2 class="text-2xl font-bold mb-4 text-primary border-b pb-2">文创产品</h2>
+          
+          <!-- 产品分类 -->
+          <div class="flex overflow-x-auto space-x-4 pb-4 mb-6 scrollbar-hide">
+            <button class="bg-primary text-white px-4 py-2 rounded-full whitespace-nowrap border border-primary/30">全部产品</button>
+            <button class="bg-light text-dark px-4 py-2 rounded-full whitespace-nowrap border border-gray-300">文化纪念类</button>
+            <button class="bg-light text-dark px-4 py-2 rounded-full whitespace-nowrap border border-gray-300">日常实用类</button>
+            <button class="bg-light text-dark px-4 py-2 rounded-full whitespace-nowrap border border-gray-300">文化装饰类</button>
+            <button class="bg-light text-dark px-4 py-2 rounded-full whitespace-nowrap border border-gray-300">体验互动类</button>
+          </div>
+          
+          <!-- 产品展示 -->
+          <div class="grid grid-cols-2 md:grid-cols-3 gap-6">
+            <!-- 产品1 -->
+            <div class="bg-light/50 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+              <div class="h-40 bg-gray-200 overflow-hidden">
+                <img src="https://p3-flow-imagex-download-sign.byteimg.com/tos-cn-i-a9rns2rl98/35ea9a41f79c422aa08f728b15267211.jpg~tplv-a9rns2rl98-24:720:720.jpg?lk3s=8e244e95&amp;rcl=20260320151408C01D73EF0C83A73C73B6&amp;rrcfp=8a172a1a&amp;x-expires=1774595649&amp;x-signature=YiGwGbfUgOGXiGkarMzoPdLSwnc%3D" alt="楼镇彩狮冰箱贴" class="w-full h-full object-cover">
+              </div>
+              <div class="p-4">
+                <h3 class="font-medium mb-1">楼镇彩狮冰箱贴</h3>
+                <p class="text-sm text-gray-600 mb-2">提取市级非遗楼镇彩扎醒狮头元素，搭配竹制挂绳与"知行合一"木牌，还原民俗风貌，小巧精致，适合日常装饰与纪念。</p>
+                <div class="flex justify-between items-center mb-3">
+                  <span class="text-primary font-bold">¥15.90</span>
+                </div>
+                <div class="space-y-3">
+                  <div class="flex items-center justify-between">
+                    <div class="flex items-center border rounded-lg">
+                      <button class="px-2 py-1 text-gray-600 hover:bg-gray-100 rounded-l-lg border border-gray-300" onclick="changeQuantity(this, -1)">-</button>
+                      <input type="number" value="1" min="1" class="w-8 text-center border-x border-gray-300 focus:outline-none" readonly="">
+                      <button class="px-2 py-1 text-gray-600 hover:bg-gray-100 rounded-r-lg border border-gray-300" onclick="changeQuantity(this, 1)">+</button>
+                    </div>
+                  </div>
+                  <button class="w-full bg-red-600 text-white px-4 py-2 rounded-lg text-sm border border-red-700 hover:bg-red-700 transition-colors shadow-md" onclick="addToCart('楼镇彩狮冰箱贴', 15.90, this)">
+                    <i class="fa fa-shopping-cart mr-2"></i>
+                    立即购买
+                  </button>
+                </div>
+              </div>
+            </div>
+            
+            <!-- 产品2 -->
+            <div class="bg-light/50 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+              <div class="h-40 bg-gray-200 overflow-hidden">
+                <img src="https://p11-flow-imagex-download-sign.byteimg.com/tos-cn-i-a9rns2rl98/b90b5df0948946cfa9be58457a5b6161.jpg~tplv-a9rns2rl98-24:720:720.jpg?lk3s=8e244e95&amp;rcl=20260320151408C01D73EF0C83A73C73B6&amp;rrcfp=8a172a1a&amp;x-expires=1774595649&amp;x-signature=R2ilp7DIIuJhqrd1xUTeO9Wn0vg%3D" alt="青铜古井凤凰钥匙扣" class="w-full h-full object-cover">
+              </div>
+              <div class="p-4">
+                <h3 class="font-medium mb-1">青铜古井凤凰钥匙扣</h3>
+                <p class="text-sm text-gray-600 mb-2">以和平出土青铜缸为原型设计古井造型，搭配凤凰纹样与"和谐和平"刻字，承载千年文脉，寓意人才辈出、平安顺遂。</p>
+                <div class="flex justify-between items-center mb-3">
+                  <span class="text-primary font-bold">¥19.90</span>
+                </div>
+                <div class="space-y-3">
+                  <div class="flex items-center justify-between">
+                    <div class="flex items-center border rounded-lg">
+                      <button class="px-2 py-1 text-gray-600 hover:bg-gray-100 rounded-l-lg border border-gray-300" onclick="changeQuantity(this, -1)">-</button>
+                      <input type="number" value="1" min="1" class="w-8 text-center border-x border-gray-300 focus:outline-none" readonly="">
+                      <button class="px-2 py-1 text-gray-600 hover:bg-gray-100 rounded-r-lg border border-gray-300" onclick="changeQuantity(this, 1)">+</button>
+                    </div>
+                  </div>
+                  <button class="w-full bg-red-600 text-white px-4 py-2 rounded-lg text-sm border border-red-700 hover:bg-red-700 transition-colors shadow-md" onclick="addToCart('青铜古井凤凰钥匙扣', 19.90, this)">
+                    <i class="fa fa-shopping-cart mr-2"></i>
+                    立即购买
+                  </button>
+                </div>
+              </div>
+            </div>
+            
+            <!-- 产品3 -->
+            <div class="bg-light/50 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+              <div class="h-40 bg-gray-200 overflow-hidden">
+                <img src="https://p3-flow-imagex-sign.byteimg.com/tos-cn-i-a9rns2rl98/rc/pc/code_assistant/0f9dde602a2e47aab7b01dc50a496c42~tplv-a9rns2rl98-image.image?lk3s=8e244e95&amp;rcl=202603201614162008B08666AFF34DD679&amp;rrcfp=e75484ac&amp;x-expires=1774599257&amp;x-signature=2EQq5dmFPUl%2BTkFMj%2BQVl1UtdIo%3D" alt="墩头蓝凤凰帆布包" class="w-full h-full object-cover">
+              </div>
+              <div class="p-4">
+                <h3 class="font-medium mb-1">墩头蓝凤凰帆布包</h3>
+                <p class="text-sm text-gray-600 mb-2">采用省级非遗墩头蓝面料，印烫金凤凰与"此心光明"字样，融合阳明心学与"深山出金凤凰"寓意，兼具环保实用与文化传播性。</p>
+                <div class="flex justify-between items-center mb-3">
+                  <span class="text-primary font-bold">¥39.90</span>
+                </div>
+                <div class="space-y-3">
+                  <div class="flex items-center justify-between">
+                    <div class="flex items-center border rounded-lg">
+                      <button class="px-2 py-1 text-gray-600 hover:bg-gray-100 rounded-l-lg border border-gray-300" onclick="changeQuantity(this, -1)">-</button>
+                      <input type="number" value="1" min="1" class="w-8 text-center border-x border-gray-300 focus:outline-none" readonly="">
+                      <button class="px-2 py-1 text-gray-600 hover:bg-gray-100 rounded-r-lg border border-gray-300" onclick="changeQuantity(this, 1)">+</button>
+                    </div>
+                  </div>
+                  <button class="w-full bg-red-600 text-white px-4 py-2 rounded-lg text-sm border border-red-700 hover:bg-red-700 transition-colors shadow-md" onclick="addToCart('墩头蓝凤凰帆布包', 39.90, this)">
+                    <i class="fa fa-shopping-cart mr-2"></i>
+                    立即购买
+                  </button>
+                </div>
+              </div>
+            </div>
+            
+            <!-- 产品4 -->
+            <div class="bg-light/50 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+              <div class="h-40 bg-gray-200 overflow-hidden">
+                <img src="https://p3-flow-imagex-sign.byteimg.com/tos-cn-i-a9rns2rl98/rc/pc/code_assistant/4616880e205a42bca66eae8a80dd82b9~tplv-a9rns2rl98-image.image?lk3s=8e244e95&amp;rcl=20260320161447E43295F0D19BF0134658&amp;rrcfp=e75484ac&amp;x-expires=1774599287&amp;x-signature=Lv7Qd8aW9z2Tl%2BCIA2NswHHnpf0%3D" alt="知行合一竹书签" class="w-full h-full object-cover">
+              </div>
+              <div class="p-4">
+                <h3 class="font-medium mb-1">知行合一竹书签</h3>
+                <p class="text-sm text-gray-600 mb-2">以竹为材，镂空烫金凤凰与竹枝纹样，双片刻"知行合一""和平"，将阳明心学与翠林竹海意象凝于方寸，兼具阅读实用与文化纪念价值。</p>
+                <div class="flex justify-between items-center mb-3">
+                  <span class="text-primary font-bold">¥9.90</span>
+                </div>
+                <div class="space-y-3">
+                  <div class="flex items-center justify-between">
+                    <div class="flex items-center border rounded-lg">
+                      <button class="px-2 py-1 text-gray-600 hover:bg-gray-100 rounded-l-lg border border-gray-300" onclick="changeQuantity(this, -1)">-</button>
+                      <input type="number" value="1" min="1" class="w-8 text-center border-x border-gray-300 focus:outline-none" readonly="">
+                      <button class="px-2 py-1 text-gray-600 hover:bg-gray-100 rounded-r-lg border border-gray-300" onclick="changeQuantity(this, 1)">+</button>
+                    </div>
+                  </div>
+                  <button class="w-full bg-red-600 text-white px-4 py-2 rounded-lg text-sm border border-red-700 hover:bg-red-700 transition-colors shadow-md" onclick="addToCart('知行合一竹书签', 9.90, this)">
+                    <i class="fa fa-shopping-cart mr-2"></i>
+                    立即购买
+                  </button>
+                </div>
+              </div>
+            </div>
+            
+            <!-- 产品5 -->
+            <div class="bg-light/50 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+              <div class="h-40 bg-gray-200 overflow-hidden">
+                <img src="https://p3-flow-imagex-sign.byteimg.com/tos-cn-i-a9rns2rl98/rc/pc/code_assistant/8ed6ea6c3ada4a9bb1ec79a54ed09447~tplv-a9rns2rl98-image.image?lk3s=8e244e95&amp;rcl=20260320161518C2A5E2B0E7160A45012F&amp;rrcfp=e75484ac&amp;x-expires=1774599318&amp;x-signature=p7E6UZgMZubhuVPo%2FWILbBQmxkk%3D" alt="竹制凤凰风铃" class="w-full h-full object-cover">
+              </div>
+              <div class="p-4">
+                <h3 class="font-medium mb-1">竹制凤凰风铃</h3>
+                <p class="text-sm text-gray-600 mb-2">天然竹节为管，搭配青铜凤凰坠，坠面刻和平地域符号，风动时清音悦耳，将竹海意境与人才期许融入日常，兼具装饰与祈福功能。</p>
+                <div class="flex justify-between items-center mb-3">
+                  <span class="text-primary font-bold">¥25.90</span>
+                </div>
+                <div class="space-y-3">
+                  <div class="flex items-center justify-between">
+                    <div class="flex items-center border rounded-lg">
+                      <button class="px-2 py-1 text-gray-600 hover:bg-gray-100 rounded-l-lg border border-gray-300" onclick="changeQuantity(this, -1)">-</button>
+                      <input type="number" value="1" min="1" class="w-8 text-center border-x border-gray-300 focus:outline-none" readonly="">
+                      <button class="px-2 py-1 text-gray-600 hover:bg-gray-100 rounded-r-lg border border-gray-300" onclick="changeQuantity(this, 1)">+</button>
+                    </div>
+                  </div>
+                  <button class="w-full bg-red-600 text-white px-4 py-2 rounded-lg text-sm border border-red-700 hover:bg-red-700 transition-colors shadow-md" onclick="addToCart('竹制凤凰风铃', 25.90, this)">
+                    <i class="fa fa-shopping-cart mr-2"></i>
+                    立即购买
+                  </button>
+                </div>
+              </div>
+            </div>
+            
+            <!-- 产品6 -->
+            <div class="bg-light/50 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+              <div class="h-40 bg-gray-200 overflow-hidden">
+                <img src="https://p9-flow-imagex-sign.byteimg.com/tos-cn-i-a9rns2rl98/rc/pc/code_assistant/bb8a8cf5888d438995ff30da0f44738b~tplv-a9rns2rl98-image.image?lk3s=8e244e95&amp;rcl=20260320161530DF522B6ECC630047D60E&amp;rrcfp=e75484ac&amp;x-expires=1774599330&amp;x-signature=uZZIXvB8mpyZ6RE0CJv5Pa0AhgI%3D" alt="此心光明陶瓷香薰蜡烛" class="w-full h-full object-cover">
+              </div>
+              <div class="p-4">
+                <h3 class="font-medium mb-1">此心光明陶瓷香薰蜡烛</h3>
+                <p class="text-sm text-gray-600 mb-2">白瓷杯承载暖调蜡液，手绘青绿山水与烫金凤凰，杯底"此心光明"四字，把阳明心学意境与和平竹海风光化作可感知的温暖氛围。</p>
+                <div class="flex justify-between items-center mb-3">
+                  <span class="text-primary font-bold">¥49.90</span>
+                </div>
+                <div class="space-y-3">
+                  <div class="flex items-center justify-between">
+                    <div class="flex items-center border rounded-lg">
+                      <button class="px-2 py-1 text-gray-600 hover:bg-gray-100 rounded-l-lg border border-gray-300" onclick="changeQuantity(this, -1)">-</button>
+                      <input type="number" value="1" min="1" class="w-8 text-center border-x border-gray-300 focus:outline-none" readonly="">
+                      <button class="px-2 py-1 text-gray-600 hover:bg-gray-100 rounded-r-lg border border-gray-300" onclick="changeQuantity(this, 1)">+</button>
+                    </div>
+                  </div>
+                  <button class="w-full bg-red-600 text-white px-4 py-2 rounded-lg text-sm border border-red-700 hover:bg-red-700 transition-colors shadow-md" onclick="addToCart('此心光明陶瓷香薰蜡烛', 49.90, this)">
+                    <i class="fa fa-shopping-cart mr-2"></i>
+                    立即购买
+                  </button>
+                </div>
+              </div>
+            </div>
+            
+            <!-- 产品7 -->
+            <div class="bg-light/50 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+              <div class="h-40 bg-gray-200 overflow-hidden">
+                <img src="https://p3-flow-imagex-sign.byteimg.com/tos-cn-i-a9rns2rl98/rc/pc/code_assistant/f27f65fce13444f8966a2c532ddc4a1d~tplv-a9rns2rl98-image.image?lk3s=8e244e95&amp;rcl=2026032016155637D47E263BA3814079A4&amp;rrcfp=e75484ac&amp;x-expires=1774599356&amp;x-signature=cwFOtnIEMnF3UZYqgMVHMSC8Hv8%3D" alt="阳明竹海主题雪糕" class="w-full h-full object-cover">
+              </div>
+              <div class="p-4">
+                <h3 class="font-medium mb-1">阳明竹海主题雪糕</h3>
+                <p class="text-sm text-gray-600 mb-2">推出竹香牛奶、竹笋清甜两种口味，雪糕棒印阳明心学短句，造型为竹节或王阳明头像，成为打卡爆款</p>
+                <div class="flex justify-between items-center mb-3">
+                  <span class="text-primary font-bold">¥18.00</span>
+                </div>
+                <div class="space-y-3">
+                  <div class="flex items-center justify-between">
+                    <div class="flex items-center border rounded-lg">
+                      <button class="px-2 py-1 text-gray-600 hover:bg-gray-100 rounded-l-lg border border-gray-300" onclick="changeQuantity(this, -1)">-</button>
+                      <input type="number" value="1" min="1" class="w-8 text-center border-x border-gray-300 focus:outline-none" readonly="">
+                      <button class="px-2 py-1 text-gray-600 hover:bg-gray-100 rounded-r-lg border border-gray-300" onclick="changeQuantity(this, 1)">+</button>
+                    </div>
+                  </div>
+                  <button class="w-full bg-red-600 text-white px-4 py-2 rounded-lg text-sm border border-red-700 hover:bg-red-700 transition-colors shadow-md" onclick="addToCart('阳明竹海主题雪糕', 18.00, this)">
+                    <i class="fa fa-shopping-cart mr-2"></i>
+                    立即购买
+                  </button>
+                </div>
+              </div>
+            </div>
+            
+            <!-- 产品8 -->
+            <div class="bg-light/50 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+              <div class="h-40 bg-gray-200 overflow-hidden">
+                <img src="https://p3-flow-imagex-sign.byteimg.com/tos-cn-i-a9rns2rl98/rc/pc/code_assistant/acd8e932c14244589f42bbbd5ea48bdf~tplv-a9rns2rl98-image.image?lk3s=8e244e95&amp;rcl=202603201616144718C1824FE45B120FB5&amp;rrcfp=e75484ac&amp;x-expires=1774599374&amp;x-signature=ylYGG2ojGBfxzT0ENLzoV2kntEc%3D" alt="竹编手作 DIY 套装" class="w-full h-full object-cover">
+              </div>
+              <div class="p-4">
+                <h3 class="font-medium mb-1">竹编手作 DIY 套装</h3>
+                <p class="text-sm text-gray-600 mb-2">包含本地竹篾、制作教程、阳明图案贴纸，让游客可亲手制作竹编小挂件，实现 "体验 + 消费" 结合</p>
+                <div class="flex justify-between items-center mb-3">
+                  <span class="text-primary font-bold">¥66.00</span>
+                </div>
+                <div class="space-y-3">
+                  <div class="flex items-center justify-between">
+                    <div class="flex items-center border rounded-lg">
+                      <button class="px-2 py-1 text-gray-600 hover:bg-gray-100 rounded-l-lg border border-gray-300" onclick="changeQuantity(this, -1)">-</button>
+                      <input type="number" value="1" min="1" class="w-8 text-center border-x border-gray-300 focus:outline-none" readonly="">
+                      <button class="px-2 py-1 text-gray-600 hover:bg-gray-100 rounded-r-lg border border-gray-300" onclick="changeQuantity(this, 1)">+</button>
+                    </div>
+                  </div>
+                  <button class="w-full bg-red-600 text-white px-4 py-2 rounded-lg text-sm border border-red-700 hover:bg-red-700 transition-colors shadow-md" onclick="addToCart('竹编手作 DIY 套装', 66.00, this)">
+                    <i class="fa fa-shopping-cart mr-2"></i>
+                    立即购买
+                  </button>
+                </div>
+              </div>
+            </div>
+            
+            <!-- 产品9 -->
+            <div class="bg-light/50 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+              <div class="h-40 bg-gray-200 overflow-hidden">
+                <img src="https://p11-flow-imagex-sign.byteimg.com/tos-cn-i-a9rns2rl98/rc/pc/code_assistant/465403e968924f7db7025ea131da77d4~tplv-a9rns2rl98-image.image?lk3s=8e244e95&amp;rcl=202603201616269D5F633E6F1F6A137BDA&amp;rrcfp=e75484ac&amp;x-expires=1774599387&amp;x-signature=YE1sAC17Mz7TFzCcA9bW6gDQsu0%3D" alt="此心光明竹制镇纸" class="w-full h-full object-cover">
+              </div>
+              <div class="p-4">
+                <h3 class="font-medium mb-1">此心光明竹制镇纸</h3>
+                <p class="text-sm text-gray-600 mb-2">长方体竹材为基，竖刻"此心光明，亦复何言"，搭配烫金凤凰与彩绘翠竹，文房功能与阳明文化、竹海生态完美结合，雅致实用。</p>
+                <div class="flex justify-between items-center mb-3">
+                  <span class="text-primary font-bold">¥9.90</span>
+                </div>
+                <div class="space-y-3">
+                  <div class="flex items-center justify-between">
+                    <div class="flex items-center border rounded-lg">
+                      <button class="px-2 py-1 text-gray-600 hover:bg-gray-100 rounded-l-lg border border-gray-300" onclick="changeQuantity(this, -1)">-</button>
+                      <input type="number" value="1" min="1" class="w-8 text-center border-x border-gray-300 focus:outline-none" readonly="">
+                      <button class="px-2 py-1 text-gray-600 hover:bg-gray-100 rounded-r-lg border border-gray-300" onclick="changeQuantity(this, 1)">+</button>
+                    </div>
+                  </div>
+                  <button class="w-full bg-red-600 text-white px-4 py-2 rounded-lg text-sm border border-red-700 hover:bg-red-700 transition-colors shadow-md" onclick="addToCart('此心光明竹制镇纸', 9.90, this)">
+                    <i class="fa fa-shopping-cart mr-2"></i>
+                    立即购买
+                  </button>
+                </div>
+              </div>
+            </div>
+            
+            <!-- 产品10 -->
+            <div class="bg-light/50 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+              <div class="h-40 bg-gray-200 overflow-hidden">
+                <img src="https://p11-flow-imagex-sign.byteimg.com/tos-cn-i-a9rns2rl98/rc/pc/code_assistant/78d415a8680f4f8f82ade7fa728ebce6~tplv-a9rns2rl98-image.image?lk3s=8e244e95&amp;rcl=20260320161646029B260244CB63192849&amp;rrcfp=e75484ac&amp;x-expires=1774599406&amp;x-signature=BpquPgJ3YI8pZsW41QhxVDgYbHo%3D" alt="竹节纹知行合一笔记本" class="w-full h-full object-cover">
+              </div>
+              <div class="p-4">
+                <h3 class="font-medium mb-1">竹节纹知行合一笔记本</h3>
+                <p class="text-sm text-gray-600 mb-2">封面仿竹节纹理，烫金凤凰与"知行合一"字样呼应阳明思想，内页绘竹海山水，让书写成为文化传承，传递"知行合一"与人才辈出的美好祝愿。</p>
+                <div class="flex justify-between items-center mb-3">
+                  <span class="text-primary font-bold">¥19.90</span>
+                </div>
+                <div class="space-y-3">
+                  <div class="flex items-center justify-between">
+                    <div class="flex items-center border rounded-lg">
+                      <button class="px-2 py-1 text-gray-600 hover:bg-gray-100 rounded-l-lg border border-gray-300" onclick="changeQuantity(this, -1)">-</button>
+                      <input type="number" value="1" min="1" class="w-8 text-center border-x border-gray-300 focus:outline-none" readonly="">
+                      <button class="px-2 py-1 text-gray-600 hover:bg-gray-100 rounded-r-lg border border-gray-300" onclick="changeQuantity(this, 1)">+</button>
+                    </div>
+                  </div>
+                  <button class="w-full bg-red-600 text-white px-4 py-2 rounded-lg text-sm border border-red-700 hover:bg-red-700 transition-colors shadow-md" onclick="addToCart('竹节纹知行合一笔记本', 19.90, this)">
+                    <i class="fa fa-shopping-cart mr-2"></i>
+                    立即购买
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- 加载更多 -->
+          <div class="text-center mt-8">
+            <button class="bg-light text-primary border border-primary px-6 py-2 rounded-lg hover:bg-primary/5 transition-colors">
+              加载更多产品
+            </button>
+          </div>
+        </div>
+        
+        <!-- 组合套餐 -->
+        <div class="bg-white rounded-xl shadow-md p-6">
+          <h2 class="text-2xl font-bold mb-4 text-primary border-b pb-2">组合套餐</h2>
+          
+          <div class="space-y-6">
+            <!-- 套餐1 -->
+            <div class="bg-light/50 rounded-lg p-4 flex flex-col md:flex-row">
+              <div class="w-full md:w-1/3 h-40 md:h-auto bg-gray-200 rounded-lg overflow-hidden mb-4 md:mb-0 md:mr-6">
+                <img src="https://p3-flow-imagex-sign.byteimg.com/tos-cn-i-a9rns2rl98/rc/pc/super_tool/82f5247f0c4f4a339a3e76e89e2180c7~tplv-a9rns2rl98-image.image?lk3s=8e244e95&amp;rcl=20260320151408C01D73EF0C83A73C73B6&amp;rrcfp=f06b921b&amp;x-expires=1776582902&amp;x-signature=QOeFU2MvDOxIfvycjxe1T0Z8YcA%3D" alt="文化套装" class="w-full h-full object-cover">
+              </div>
+              <div class="flex-grow">
+                <div class="flex justify-between items-start mb-2">
+                  <h3 class="text-xl font-semibold">阳明文化套装</h3>
+                  <div class="bg-red-500 text-white text-sm px-2 py-1 rounded">热销</div>
+                </div>
+                <p class="text-gray-600 mb-4">包含《传习录》精装版、竹制书签套装、王阳明语录笔记本</p>
+                <div class="flex items-center mb-4">
+                  <span class="text-primary font-bold text-xl mr-3">¥128.00</span>
+                  <span class="text-gray-400 line-through">¥148.00</span>
+                  <span class="ml-2 text-sm bg-red-100 text-red-600 px-2 py-0.5 rounded">省¥20</span>
+                </div>
+                <button class="bg-red-600 text-white px-4 py-2 rounded-lg w-full md:w-auto border border-red-700 hover:bg-red-700 transition-colors shadow-md">
+                  <i class="fa fa-shopping-cart mr-2"></i>
+                  立即购买
+                </button>
+              </div>
+            </div>
+            
+            <!-- 套餐2 -->
+            <div class="bg-light/50 rounded-lg p-4 flex flex-col md:flex-row">
+              <div class="w-full md:w-1/3 h-40 md:h-auto bg-gray-200 rounded-lg overflow-hidden mb-4 md:mb-0 md:mr-6">
+                <img src="https://p26-flow-imagex-download-sign.byteimg.com/tos-cn-i-a9rns2rl98/8fa9504c84f5464a94c8032ea062e52e.jpg~tplv-a9rns2rl98-24:720:720.jpg?lk3s=8e244e95&amp;rcl=20260320151408C01D73EF0C83A73C73B6&amp;rrcfp=8a172a1a&amp;x-expires=1774595649&amp;x-signature=8h2Qp%2BLmlOPBnWQhpSRUWzp7rjo%3D" alt="茶具套装" class="w-full h-full object-cover">
+              </div>
+              <div class="flex-grow">
+                <div class="flex justify-between items-start mb-2">
+                  <h3 class="text-xl font-semibold">竹韵生活套装</h3>
+                  <div class="bg-green-500 text-white text-sm px-2 py-1 rounded">新品</div>
+                </div>
+                <p class="text-gray-600 mb-4">包含竹韵茶具套装、竹制笔筒、竹制杯垫</p>
+                <div class="flex items-center mb-4">
+                  <span class="text-primary font-bold text-xl mr-3">¥198.00</span>
+                  <span class="text-gray-400 line-through">¥236.00</span>
+                  <span class="ml-2 text-sm bg-red-100 text-red-600 px-2 py-0.5 rounded">省¥38</span>
+                </div>
+                <button class="bg-red-600 text-white px-4 py-2 rounded-lg w-full md:w-auto border border-red-700 hover:bg-red-700 transition-colors shadow-md">
+                  <i class="fa fa-shopping-cart mr-2"></i>
+                  立即购买
+                </button>
+              </div>
+            </div>
+            
+
+          </div>
+        </div>
+      </div>
+      
+      <!-- 体验预约页面 -->
+      <div id="yuyue" class="tab-content hidden">
+        <div class="bg-white rounded-xl shadow-md p-6 mb-6">
+          <h2 class="text-2xl font-bold mb-4 text-primary border-b pb-2">体验活动</h2>
+          
+          <!-- 活动分类 -->
+          <div class="flex overflow-x-auto space-x-4 pb-4 mb-6 scrollbar-hide">
+            <button class="bg-primary text-white px-4 py-2 rounded-full whitespace-nowrap border border-primary/30">全部活动</button>
+            <button class="bg-light text-dark px-4 py-2 rounded-full whitespace-nowrap border border-gray-300">剧本杀</button>
+            <button class="bg-light text-dark px-4 py-2 rounded-full whitespace-nowrap border border-gray-300">研学课程</button>
+            <button class="bg-light text-dark px-4 py-2 rounded-full whitespace-nowrap border border-gray-300">竹宴体验</button>
+          </div>
+          
+          <!-- 活动展示 -->
+          <div class="space-y-6">
+            <!-- 活动1 -->
+            <div class="bg-light/50 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+              <div class="flex flex-col md:flex-row">
+                <div class="w-full md:w-1/3 h-48 md:h-auto bg-gray-200 overflow-hidden">
+                  <img src="https://p11-flow-imagex-sign.byteimg.com/tos-cn-i-a9rns2rl98/rc/pc/code_assistant/3ea9e866fa2a432987e527c7ec4223ae~tplv-a9rns2rl98-image.image?lk3s=8e244e95&amp;rcl=2026032016335651611FE8DB502E0F2498&amp;rrcfp=03245832&amp;x-expires=1774600441&amp;x-signature=hU8yhiEmFcpBpqfIuufOdgyABR8%3D" alt="王阳明剧本杀" class="w-full h-full object-cover">
+                </div>
+                <div class="p-4 flex-grow">
+                  <div class="flex justify-between items-start mb-2">
+                    <h3 class="text-xl font-semibold">王阳明传奇</h3>
+                    <span class="bg-red-100 text-red-600 text-sm px-2 py-0.5 rounded">剧本杀</span>
+                  </div>
+                  <p class="text-gray-600 mb-4">沉浸式体验王阳明龙场悟道的传奇故事，通过角色扮演深入了解阳明心学的形成过程。</p>
+                  <div class="flex flex-wrap gap-2 mb-4">
+                    <span class="bg-primary/10 text-primary text-xs px-2 py-1 rounded">历史文化</span>
+                    <span class="bg-primary/10 text-primary text-xs px-2 py-1 rounded">角色扮演</span>
+                    <span class="bg-primary/10 text-primary text-xs px-2 py-1 rounded">团队协作</span>
+                  </div>
+                  <div class="flex justify-between items-center">
+                    <div>
+                      <span class="text-primary font-bold">¥128.00/人</span>
+                      <span class="text-sm text-gray-500 ml-2">时长：2小时</span>
+                    </div>
+                    <button class="bg-primary text-white px-4 py-2 rounded-lg border border-primary/30">
+                      立即预约
+                    </button>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- 可预约时段 -->
+              <div class="bg-white p-4 border-t">
+                <h4 class="font-medium mb-3">可预约时段</h4>
+                <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-2">
+                  <button class="bg-light text-dark border border-gray-200 rounded p-2 text-center hover:bg-primary hover:text-white transition-colors">
+                    今天 10:00
+                  </button>
+                  <button class="bg-light text-dark border border-gray-200 rounded p-2 text-center hover:bg-primary hover:text-white transition-colors">
+                    今天 14:00
+                  </button>
+                  <button class="bg-light text-dark border border-gray-200 rounded p-2 text-center hover:bg-primary hover:text-white transition-colors">
+                    明天 10:00
+                  </button>
+                  <button class="bg-light text-dark border border-gray-200 rounded p-2 text-center hover:bg-primary hover:text-white transition-colors">
+                    明天 14:00
+                  </button>
+                  <button class="bg-gray-200 text-gray-400 border border-gray-200 rounded p-2 text-center cursor-not-allowed">
+                    后天 10:00
+                  </button>
+                  <button class="bg-light text-dark border border-gray-200 rounded p-2 text-center hover:bg-primary hover:text-white transition-colors">
+                    后天 14:00
+                  </button>
+                </div>
+              </div>
+            </div>
+            
+            <!-- 活动2 -->
+            <div class="bg-light/50 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+              <div class="flex flex-col md:flex-row">
+                <div class="w-full md:w-1/3 h-48 md:h-auto bg-gray-200 overflow-hidden">
+                  <img src="https://p3-flow-imagex-sign.byteimg.com/tos-cn-i-a9rns2rl98/rc/pc/super_tool/10819088bb914f4ca57d40dab7cfa4ca~tplv-a9rns2rl98-image.image?lk3s=8e244e95&amp;rcl=20260320151408C01D73EF0C83A73C73B6&amp;rrcfp=f06b921b&amp;x-expires=1776582888&amp;x-signature=eDCcAYQFnL1pCDrY1w0e9a4VDao%3D" alt="竹文化研学" class="w-full h-full object-cover">
+                </div>
+                <div class="p-4 flex-grow">
+                  <div class="flex justify-between items-start mb-2">
+                    <h3 class="text-xl font-semibold">竹文化研学课程</h3>
+                    <span class="bg-green-100 text-green-600 text-sm px-2 py-0.5 rounded">研学课程</span>
+                  </div>
+                  <p class="text-gray-600 mb-4">了解竹子的生长特性、文化寓意以及在王阳明心学中的象征意义，体验竹艺制作。</p>
+                  <div class="flex flex-wrap gap-2 mb-4">
+                    <span class="bg-primary/10 text-primary text-xs px-2 py-1 rounded">自然科学</span>
+                    <span class="bg-primary/10 text-primary text-xs px-2 py-1 rounded">手工制作</span>
+                    <span class="bg-primary/10 text-primary text-xs px-2 py-1 rounded">文化传承</span>
+                  </div>
+                  <div class="flex justify-between items-center">
+                    <div>
+                      <span class="text-primary font-bold">¥98.00/人</span>
+                      <span class="text-sm text-gray-500 ml-2">时长：1.5小时</span>
+                    </div>
+                    <button class="bg-primary text-white px-4 py-2 rounded-lg border border-primary/30">
+                      立即预约
+                    </button>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- 可预约时段 -->
+              <div class="bg-white p-4 border-t">
+                <h4 class="font-medium mb-3">可预约时段</h4>
+                <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-2">
+                  <button class="bg-light text-dark border border-gray-200 rounded p-2 text-center hover:bg-primary hover:text-white transition-colors">
+                    今天 09:30
+                  </button>
+                  <button class="bg-gray-200 text-gray-400 border border-gray-200 rounded p-2 text-center cursor-not-allowed">
+                    今天 15:00
+                  </button>
+                  <button class="bg-light text-dark border border-gray-200 rounded p-2 text-center hover:bg-primary hover:text-white transition-colors">
+                    明天 09:30
+                  </button>
+                  <button class="bg-light text-dark border border-gray-200 rounded p-2 text-center hover:bg-primary hover:text-white transition-colors">
+                    明天 15:00
+                  </button>
+                  <button class="bg-light text-dark border border-gray-200 rounded p-2 text-center hover:bg-primary hover:text-white transition-colors">
+                    后天 09:30
+                  </button>
+                  <button class="bg-light text-dark border border-gray-200 rounded p-2 text-center hover:bg-primary hover:text-white transition-colors">
+                    后天 15:00
+                  </button>
+                </div>
+              </div>
+            </div>
+            
+            <!-- 活动3 -->
+            <div class="bg-light/50 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+              <div class="flex flex-col md:flex-row">
+                <div class="w-full md:w-1/3 h-48 md:h-auto bg-gray-200 overflow-hidden">
+                  <img src="https://p11-flow-imagex-sign.byteimg.com/tos-cn-i-a9rns2rl98/rc/pc/code_assistant/e58edb19bea04dbcafaddf128fac44c6~tplv-a9rns2rl98-image.image?lk3s=8e244e95&amp;rcl=202603201633044CCDA49E64155C110F5C&amp;rrcfp=03245832&amp;x-expires=1774600388&amp;x-signature=ruQgjLpXQG1WjrO9xv9Unh4YKPc%3D" alt="竹宴体验" class="w-full h-full object-cover">
+                </div>
+                <div class="p-4 flex-grow">
+                  <div class="flex justify-between items-start mb-2">
+                    <h3 class="text-xl font-semibold">竹乡美食体验</h3>
+                    <span class="bg-yellow-100 text-yellow-600 text-sm px-2 py-0.5 rounded">竹宴体验</span>
+                  </div>
+                  <p class="text-gray-600 mb-4">品尝以竹为主题的特色美食，了解客家饮食文化与王阳明"致良知"思想的融合。</p>
+                  <div class="flex flex-wrap gap-2 mb-4">
+                    <span class="bg-primary/10 text-primary text-xs px-2 py-1 rounded">美食品鉴</span>
+                    <span class="bg-primary/10 text-primary text-xs px-2 py-1 rounded">文化体验</span>
+                    <span class="bg-primary/10 text-primary text-xs px-2 py-1 rounded">健康饮食</span>
+                  </div>
+                  <div class="flex justify-between items-center">
+                    <div>
+                      <span class="text-primary font-bold">¥168.00/人</span>
+                      <span class="text-sm text-gray-500 ml-2">时长：1小时</span>
+                    </div>
+                    <button class="bg-primary text-white px-4 py-2 rounded-lg border border-primary/30">
+                      立即预约
+                    </button>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- 可预约时段 -->
+              <div class="bg-white p-4 border-t">
+                <h4 class="font-medium mb-3">可预约时段</h4>
+                <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-2">
+                  <button class="bg-light text-dark border border-gray-200 rounded p-2 text-center hover:bg-primary hover:text-white transition-colors">
+                    今天 12:00
+                  </button>
+                  <button class="bg-light text-dark border border-gray-200 rounded p-2 text-center hover:bg-primary hover:text-white transition-colors">
+                    今天 18:00
+                  </button>
+                  <button class="bg-light text-dark border border-gray-200 rounded p-2 text-center hover:bg-primary hover:text-white transition-colors">
+                    明天 12:00
+                  </button>
+                  <button class="bg-gray-200 text-gray-400 border border-gray-200 rounded p-2 text-center cursor-not-allowed">
+                    明天 18:00
+                  </button>
+                  <button class="bg-light text-dark border border-gray-200 rounded p-2 text-center hover:bg-primary hover:text-white transition-colors">
+                    后天 12:00
+                  </button>
+                  <button class="bg-light text-dark border border-gray-200 rounded p-2 text-center hover:bg-primary hover:text-white transition-colors">
+                    后天 18:00
+                  </button>
+                </div>
+              </div>
+            </div>
+            
+
+          </div>
+        </div>
+      </div>
+      
+      <!-- 我的页面 -->
+      <div id="wode" class="tab-content hidden">
+        <div class="bg-white rounded-xl shadow-md p-6 mb-6">
+          <div class="flex items-center mb-6">
+            <div class="w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center mr-4">
+              <i class="fa fa-user-circle text-4xl text-primary"></i>
+            </div>
+            <div>
+              <h2 class="text-xl font-bold">游客用户</h2>
+              <p class="text-gray-500">欢迎来到阳明博物馆</p>
+            </div>
+            
+
+          </div>
+          
+          <div class="grid grid-cols-3 gap-4 text-center mb-6">
+            <div class="p-4 bg-light/50 rounded-lg">
+              <div class="text-primary font-bold text-xl mb-1">0</div>
+              <div class="text-sm text-gray-600">收藏</div>
+            </div>
+            <div class="p-4 bg-light/50 rounded-lg">
+              <div class="text-primary font-bold text-xl mb-1">0</div>
+              <div class="text-sm text-gray-600">足迹</div>
+            </div>
+            <div class="p-4 bg-light/50 rounded-lg">
+              <div class="text-primary font-bold text-xl mb-1">0</div>
+              <div class="text-sm text-gray-600">积分</div>
+            </div>
+            
+
+          </div>
+          
+          <div class="space-y-3">
+            <button class="w-full flex items-center justify-between p-4 bg-light/50 rounded-lg hover:bg-primary/5 transition-colors border border-gray-200">
+              <div class="flex items-center">
+                <i class="fa fa-shopping-bag text-primary mr-3"></i>
+                <span>我的订单</span>
+              </div>
+              <i class="fa fa-angle-right text-gray-400"></i>
+            </button>
+            <button class="w-full flex items-center justify-between p-4 bg-light/50 rounded-lg hover:bg-primary/5 transition-colors border border-gray-200">
+              <div class="flex items-center">
+                <i class="fa fa-calendar-check-o text-primary mr-3"></i>
+                <span>我的预约</span>
+              </div>
+              <i class="fa fa-angle-right text-gray-400"></i>
+            </button>
+            <button class="w-full flex items-center justify-between p-4 bg-light/50 rounded-lg hover:bg-primary/5 transition-colors border border-gray-200">
+              <div class="flex items-center">
+                <i class="fa fa-heart text-primary mr-3"></i>
+                <span>我的收藏</span>
+              </div>
+              <i class="fa fa-angle-right text-gray-400"></i>
+            </button>
+            <button class="w-full flex items-center justify-between p-4 bg-light/50 rounded-lg hover:bg-primary/5 transition-colors border border-gray-200">
+              <div class="flex items-center">
+                <i class="fa fa-map-marker text-primary mr-3"></i>
+                <span>我的足迹</span>
+              </div>
+              <i class="fa fa-angle-right text-gray-400"></i>
+            </button>
+            <button class="w-full flex items-center justify-between p-4 bg-light/50 rounded-lg hover:bg-primary/5 transition-colors border border-gray-200">
+              <div class="flex items-center">
+                <i class="fa fa-cog text-primary mr-3"></i>
+                <span>设置</span>
+              </div>
+              <i class="fa fa-angle-right text-gray-400"></i>
+            </button>
+          </div>
+        </div>
+        
+        <!-- 订单和预约 -->
+        <div class="bg-white rounded-xl shadow-md p-6">
+          <h2 class="text-xl font-bold mb-4 text-primary border-b pb-2">我的订单与预约</h2>
+          
+          <div class="mb-6">
+            <h3 class="font-semibold mb-3">文创订单</h3>
+            <div class="bg-light/50 p-4 rounded-lg text-center">
+              <i class="fa fa-shopping-bag text-4xl text-gray-300 mb-2"></i>
+              <p class="text-gray-500">暂无订单</p>
+              <button class="mt-3 bg-primary text-white px-4 py-2 rounded-lg border border-primary/30">
+                去选购
+              </button>
+            </div>
+            
+
+          </div>
+          
+          <div>
+            <h3 class="font-semibold mb-3">体验预约</h3>
+            <div class="bg-light/50 p-4 rounded-lg text-center">
+              <i class="fa fa-calendar-check-o text-4xl text-gray-300 mb-2"></i>
+              <p class="text-gray-500">暂无预约</p>
+              <button class="mt-3 bg-primary text-white px-4 py-2 rounded-lg border border-primary/30">
+                去预约
+              </button>
+            </div>
+            
+
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- 底部导航栏 -->
+  <nav class="fixed bottom-0 left-0 right-0 bg-white shadow-lg border-t border-gray-200 z-50">
+    <div class="flex justify-around">
+      <button class="flex flex-col items-center py-3 px-6 text-primary" onclick="showTab('wenda')">
+        <i class="fa fa-book text-xl mb-1"></i>
+        <span class="text-xs">问道阳明</span>
+      </button>
+      <button class="flex flex-col items-center py-3 px-6 text-gray-500" onclick="showTab('youli')">
+        <i class="fa fa-gift text-xl mb-1"></i>
+        <span class="text-xs">阳明有礼</span>
+      </button>
+      <button class="flex flex-col items-center py-3 px-6 text-gray-500" onclick="showTab('yuyue')">
+        <i class="fa fa-calendar-check-o text-xl mb-1"></i>
+        <span class="text-xs">体验预约</span>
+      </button>
+      <button class="flex flex-col items-center py-3 px-6 text-gray-500" onclick="showTab('wode')">
+        <i class="fa fa-user text-xl mb-1"></i>
+        <span class="text-xs">我的</span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- 语音讲解悬浮按钮 -->
+  <div id="audio-float-btn" class="fixed right-6 bottom-24 bg-primary text-white w-12 h-12 rounded-full shadow-lg flex items-center justify-center z-40 cursor-pointer">
+    <i class="fa fa-volume-up text-xl"></i>
+  </div>
+
+  <script>
+    // 购物车功能
+    let cart = [];
+    
+    // 改变商品数量
+    function changeQuantity(button, change) {
+      const input = button.parentElement.querySelector('input');
+      let currentValue = parseInt(input.value);
+      const newValue = currentValue + change;
+      
+      if (newValue >= 1) {
+        input.value = newValue;
+      }
+    }
+    
+    // 添加到购物车
+    function addToCart(productName, price, button) {
+      const quantityInput = button.parentElement.parentElement.querySelector('input');
+      const quantity = parseInt(quantityInput.value);
+      
+      // 检查购物车中是否已有该商品
+      const existingItem = cart.find(item => item.name === productName);
+      
+      if (existingItem) {
+        existingItem.quantity += quantity;
+      } else {
+        cart.push({
+          name: productName,
+          price: price,
+          quantity: quantity
+        });
+      }
+      
+      // 显示添加成功提示
+      alert(`${productName} × ${quantity} 已加入购物车！`);
+      
+      // 更新购物车数量显示
+      updateCartCount();
+      
+      // 重置数量为1
+      quantityInput.value = 1;
+    }
+    
+    // 更新购物车数量
+    function updateCartCount() {
+      const cartCount = cart.reduce((total, item) => total + item.quantity, 0);
+      const cartIcon = document.querySelector('.fa-shopping-cart').parentElement;
+      
+      // 移除旧的数量标记
+      const oldBadge = cartIcon.querySelector('.cart-badge');
+      if (oldBadge) {
+        oldBadge.remove();
+      }
+      
+      // 添加新的数量标记
+      if (cartCount > 0) {
+        const badge = document.createElement('span');
+        badge.className = 'cart-badge absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full w-4 h-4 flex items-center justify-center';
+        badge.textContent = cartCount > 99 ? '99+' : cartCount;
+        cartIcon.classList.add('relative');
+        cartIcon.appendChild(badge);
+      }
+    }
+    
+    // 页面切换功能
+    function showTab(tabId) {
+      // 隐藏所有内容
+      document.querySelectorAll('.tab-content').forEach(tab => {
+        tab.classList.add('hidden');
+      });
+      
+      // 显示选中的内容
+      document.getElementById(tabId).classList.remove('hidden');
+      
+      // 更新底部导航栏样式
+      const navButtons = document.querySelectorAll('nav button');
+      navButtons.forEach(btn => {
+        btn.classList.remove('text-primary');
+        btn.classList.add('text-gray-500');
+      });
+      
+      // 高亮当前选中的导航按钮
+      const activeButton = document.querySelector(`nav button[onclick="showTab('${tabId}')"]`);
+      if (activeButton) {
+        activeButton.classList.remove('text-gray-500');
+        activeButton.classList.add('text-primary');
+      }
+    }
+    
+    // 语音讲解开关功能
+    document.getElementById('all-audio-toggle').addEventListener('click', function() {
+      const icon = this.querySelector('i');
+      const text = this.querySelector('span');
+      
+      if (icon.classList.contains('fa-play')) {
+        // 开启讲解
+        icon.classList.remove('fa-play');
+        icon.classList.add('fa-pause');
+        text.textContent = '暂停讲解';
+        
+        // 显示悬浮按钮
+        document.getElementById('audio-float-btn').classList.remove('hidden');
+      } else {
+        // 关闭讲解
+        icon.classList.remove('fa-pause');
+        icon.classList.add('fa-play');
+        text.textContent = '开启讲解';
+        
+        // 隐藏悬浮按钮
+        document.getElementById('audio-float-btn').classList.add('hidden');
+      }
+    });
+    
+    // 悬浮按钮点击事件
+    document.getElementById('audio-float-btn').addEventListener('click', function() {
+      const toggleBtn = document.getElementById('all-audio-toggle');
+      const icon = toggleBtn.querySelector('i');
+      
+      if (icon.classList.contains('fa-pause')) {
+        // 如果正在播放，则暂停
+        toggleBtn.click();
+      }
+    });
+    
+    // 模拟进度条更新
+    setInterval(function() {
+      const progressBar = document.querySelector('.bg-primary.h-2\\.5');
+      if (progressBar && !progressBar.parentElement.classList.contains('hidden')) {
+        const currentWidth = parseInt(progressBar.style.width) || 25;
+        if (currentWidth < 100) {
+          progressBar.style.width = (currentWidth + 1) + '%';
+        } else {
+          progressBar.style.width = '0%';
+        }
+      }
+    }, 1000);
+  </script>
+
+</body></html>
